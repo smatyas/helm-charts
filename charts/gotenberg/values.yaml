@@ -16,6 +16,20 @@ gotenberg:
   # By default, the API will add a log entry when the healthcheck endpoint is called.
   disableHealthcheckLogging: "0"
 
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 1
+  metrics: []
+#  - type: Resource
+#    resource:
+#      name: cpu
+#      targetAverageUtilization: 80
+#  - type: Resource
+#    resource:
+#      name: memory
+#      targetAverageUtilization: 80
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
