@@ -1,0 +1,50 @@
+# Default values for gotenberg.
+replicaCount: 1
+
+image:
+  repository: thecodingmachine/gotenberg
+  tag: 5.1.0
+  pullPolicy: IfNotPresent
+
+gotenberg:
+  # If Google Chrome is disabled, the following conversions will not be available anymore: HTML, URL and Markdown
+  disableGoogleChrome: "0"
+  # If LibreOffice (unoconv) is disabled, the following conversion will not be available anymore: Office
+  disableLibreOffice: "0"
+  # By default, the API will wait 10 seconds before it considers the conversion to be unsuccessful.
+  defaultWaitTimeout: "10.0"
+  # By default, the API will add a log entry when the healthcheck endpoint is called.
+  disableHealthcheckLogging: "0"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: gotenberg.local
+      paths:
+        - /
+
+  tls: []
+resources:
+  limits:
+    cpu: 400m
+    memory: 1Gi
+  requests:
+    cpu: 200m
+    memory: 512Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
