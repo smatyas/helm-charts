@@ -1,0 +1,19 @@
+apiVersion: v1
+name: gotenberg
+version: 0.1.0
+appVersion: 5.1.0
+description: A Docker-powered stateless API for converting HTML, Markdown and Office documents to PDF
+keywords:
+  - gotenberg
+  - pdf
+  - markdown
+  - office
+  - converter
+home: https://thecodingmachine.github.io/gotenberg/
+sources:
+  - https://github.com/thecodingmachine/gotenberg
+  - https://github.com/smatyas/helm-charts/gotenberg
+maintainers:
+  - name: smatyas
+    email: somfai.matyas@gmail.com
+icon: https://raw.githubusercontent.com/thecodingmachine/gotenberg/master/docs/theme/gotenberg/img/favicon-196x196.png
